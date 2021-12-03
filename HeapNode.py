@@ -14,12 +14,12 @@ class HeapNode:
     def getPrintableFreeBlocksList(self):
         nodesStringArray = []
         while freeNode is not None:
-            nodesStringArray.append('[Position Free = %(position)s | Free Blocks = %(freeBlocks)d]' % {"position": self.getPositin(), "freeBlocks": self.getFreeBlocks()})
+            nodesStringArray.append('[Position Free = %(position)s | Free Blocks = %(freeBlocks)d]' % {"position": self.getPosition(), "freeBlocks": self.getFreeBlocks()})
             freeNode = freeNode.getNextNode()
         return "->".join(nodesStringArray)
     def setPosition(self,position):
         self.position=position
-    def getPositin(self):
+    def getPosition(self):
         return self.position
     
     def setFreeBlocks(self,freeBlocks):

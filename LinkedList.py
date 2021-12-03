@@ -10,7 +10,7 @@ class LinkedList:
         freeNode= self.head
         nodesStringArray = []
         while freeNode is not None:
-            nodesStringArray.append('[Position Free = %(position)s | Free Blocks = %(freeBlocks)d]' % {"position": freeNode.getPositin(), "freeBlocks": freeNode.getFreeBlocks()})
+            nodesStringArray.append('[Position Free = %(position)s | Free Blocks = %(freeBlocks)d]' % {"position": freeNode.getPosition(), "freeBlocks": freeNode.getFreeBlocks()})
             freeNode = freeNode.getNextNode()
         return "->".join(nodesStringArray)
     
@@ -23,7 +23,10 @@ class LinkedList:
     def __next__(self):
          linkedListnode = self.head
          return linkedListnode.getNextNode()
-
+    def getHead(self):
+        return self.head
+    def setHead(self,head):
+         self.head = head
     def removeFromFreeSpace(self,position):
         if(self.head is None):
             raise ("List of free Space is empty [Memory is full]")
