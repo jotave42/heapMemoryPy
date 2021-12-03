@@ -1,0 +1,11 @@
+heap best
+new a 4
+new b 2
+new c 10
+exibe
+del b
+b = a
+exibe
+new d 3
+del b
+heap worst

@@ -10,7 +10,13 @@ class HeapNode:
         self.valeu=valeu
         self.position =position
         self.freeBlocks = freeBlocks
-    
+
+    def getPrintableFreeBlocksList(self):
+        nodesStringArray = []
+        while freeNode is not None:
+            nodesStringArray.append('[Position Free = %(position)s | Free Blocks = %(freeBlocks)d]' % {"position": self.getPositin(), "freeBlocks": self.getFreeBlocks()})
+            freeNode = freeNode.getNextNode()
+        return "->".join(nodesStringArray)
     def setPosition(self,position):
         self.position=position
     def getPositin(self):
