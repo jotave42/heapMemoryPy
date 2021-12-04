@@ -56,6 +56,10 @@ class HeapMemory:
             if ((blocksCount <= nodeFreeSpace.getFreeBlocks() <=  smallestFreeSpace) or (smallestFreeSpace<blocksCount)):
                 smallestFreeSpace = nodeFreeSpace.getFreeBlocks()
                 position = nodeFreeSpace.getPosition()
+            if(nodeFreeSpace.getFreeBlocks() == blocksCount):
+                 smallestFreeSpace = nodeFreeSpace.getFreeBlocks()
+                 position = nodeFreeSpace.getPosition()
+                 break #best possible
         for nodeFreeSpace in self.freeSpaceList:
             if(nodeFreeSpace.hasTheSamePosition(position)):
                 nodeFreeSpace.setPosition(nodeFreeSpace.getPosition()+blocksCount)
@@ -69,6 +73,10 @@ class HeapMemory:
         largestFreeSpace = self.freeSpaceList.head.getFreeBlocks()
         position = self.freeSpaceList.head.getPosition()
         for nodeFreeSpace in self.freeSpaceList:
+            if(nodeFreeSpace.getFreeBlocks() == blocksCount):
+                 largestFreeSpace = nodeFreeSpace.getFreeBlocks()
+                 position = nodeFreeSpace.getPosition()
+                 break #best possible
             if ((nodeFreeSpace.getFreeBlocks()> largestFreeSpace) and (blocksCount <= nodeFreeSpace.getFreeBlocks())):
                  largestFreeSpace = nodeFreeSpace.getFreeBlocks()
                  position = nodeFreeSpace.getPosition()
