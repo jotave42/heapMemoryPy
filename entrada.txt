@@ -8,4 +8,5 @@ b = a
 exibe
 new d 3
 del b
+exibe
 heap worst
